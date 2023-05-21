@@ -68,16 +68,16 @@ const Experience = () => {
   ];
 
   return (
-    <div id="experience" className="bg-[#008ECC] w-full h-[120%] sm:h-screen">
+    <div id="experience" className="bg-[#008ECC] w-full h-[120vh] sm:h-screen">
       <div
-        className="max-w-screen-lg mx-auto p-4
+        className="max-w-screen-lg mx-auto p-6
         flex flex-col justify-center w-full h-full text-white"
       >
         <div>
-          <p className="text-3xl sm:text-6xl font-bold border-b-4 border-[#434242] p-2 inline">
+          <p className="text-2xl sm:text-5xl font-bold border-b-4 border-[#434242] p-2 inline">
             Experience
           </p>
-          <p className="py-6 text-lg sm:text-2xl">
+          <p className="py-6 text-md sm:text-xl">
             these are the programming language i've work with
           </p>
         </div>

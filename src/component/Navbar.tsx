@@ -47,6 +47,8 @@ const Navbar = () => {
       setNavbar(true);
     } else if (window.pageYOffset >= 800) {
       setNavbar(true);
+    } else if (window.pageYOffset >= 600) {
+      setNavbar(true);
     } else {
       setNavbar(false);
     }
@@ -62,11 +64,11 @@ const Navbar = () => {
       }`}
     >
       {/* Start */}
-      <ul className="hidden md:min-[1488px]:flex">
+      <ul className="hidden md:min-[1022px]:flex">
         {links.map(({ id, link }) => (
           <li
             key={id}
-            className="px-6 mx-2 text-xl cursor-pointer capitalize font-light hover:scale-105 text-[#F3EFE0] hover:bg-[#F3EFE0] hover:text-[#222222] transition rounded-lg duration-[0.5s]"
+            className="px-2 mx-1 text-md cursor-pointer capitalize font-light hover:scale-105 text-[#F3EFE0] hover:bg-[#F3EFE0] hover:text-[#222222] transition rounded-lg duration-[0.5s]"
           >
             <Link to={link} smooth duration={500}>
               {link}
@@ -76,16 +78,16 @@ const Navbar = () => {
       </ul>
 
       <div>
-        <h1 className="text-3xl sm:text-6xl font-signature text-[#F3EFE0]">
+        <h1 className="text-3xl md:text-6xl sm:text-4xl font-signature text-[#F3EFE0]">
           My CV
         </h1>
       </div>
 
-      <ul className="hidden md:min-[1488px]:flex">
+      <ul className="hidden md:min-[1022px]:flex">
         {links2.map(({ id, link }) => (
           <li
             key={id}
-            className="px-6 mx-2 text-xl cursor-pointer capitalize font-light hover:scale-105 text-[#F3EFE0] hover:bg-[#F3EFE0] hover:text-[#222222] transition rounded-lg duration-[0.5s]"
+            className="px-2 mx-1 text-md cursor-pointer capitalize font-light hover:scale-105 text-[#F3EFE0] hover:bg-[#F3EFE0] hover:text-[#222222] transition rounded-lg duration-[0.5s]"
           >
             <Link to={link} smooth duration={500}>
               {link}
@@ -98,7 +100,7 @@ const Navbar = () => {
 
       <div
         onClick={() => setNav(!nav)}
-        className="cursor-pointer pr-4 z-10 duration-300 text-white md:min-[1488px]:hidden"
+        className="cursor-pointer pr-4 z-10 duration-300 text-white md:min-[1022px]:hidden"
       >
         {nav ? <FaTimes size={30} /> : <FaBars size={30} />}
       </div>

@@ -6,14 +6,14 @@ function Home() {
   return (
     <div
       id="home"
-      className="h-screen md:max-[766px]:mt-20 w-full bg-hero bg-no-repeat bg-cover bg-center sm:bg-cover bg-fixed"
+      className="h-screen md:max-[766px]:mt-20 w-full bg-hero bg-no-repeat bg-cover bg-center bg-fixed"
     >
-      <div className="max-w-screen-lg flex flex-col item-center justify-start h-full ml-[10%] px-2 md:flex-row">
-        <div className="flex flex-col mt-[50%] sm:mb-[50%] justify-center h-auto">
-          <h2 className="text-xl w-28 md:text-6xl md:w-80 sm:text-6xl sm:w-80 font-bold border-b-2 border-[#FFE6E6] text-[#22A39F]">
+      <div className="max-w-screen-lg flex flex-col items-center justify-start h-full ml-[10%] px-2 md:flex-row">
+        <div className="flex flex-col mt-[50%] sm:mb-[40%] justify-center h-auto">
+          <h2 className="text-xl w-28 md:text-5xl md:w-64 sm:text-4xl sm:w-48 font-bold border-b-2 border-[#FFE6E6] text-[#22A39F]">
             About Me
           </h2>
-          <p className="text-[#FFE6E6] text-lg sm:text-2xl py-4 max-w-md">
+          <p className="text-[#FFE6E6] text-md md:text-lg sm:text-lg py-4 max-w-md">
             I am a junior programmer and student at the Wira Harapan Vocational
             High School, I am currently a street vendor at Taksu Tech, for more
             details, click the button below.

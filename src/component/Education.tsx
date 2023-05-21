@@ -32,16 +32,16 @@ const Education = () => {
         flex flex-col justify-center w-full h-full text-white"
       >
         <div>
-          <p className="text-3xl sm:text-5xl font-bold border-b-4 border-[#434242] p-2 inline">
+          <p className="text-2xl sm:text-4xl font-bold border-b-4 border-[#434242] p-2 inline">
             Education
           </p>
         </div>
         <div className="w-full grid flex-col sm:grid-cols-3 gap-8 text-center py-8 px-12 sm:px-0">
           {Edu.map(({ id, src, title, tahun }) => (
             <div key={id}>
-              <img src={src} alt="" className="w-full max-sm:w-2/5 mx-auto" />
-              <div className="mt-4 text-xl sm:text-2xl">{title}</div>
-              <div className="text-lg sm:text-xl">{tahun}</div>
+              <img src={src} alt="" className="w-full rounded-md max-sm:w-2/5 mx-auto" />
+              <div className="mt-2 text-lg sm:text-xl">{title}</div>
+              <div className="text-md sm:text-lg">{tahun}</div>
             </div>
           ))}
         </div>

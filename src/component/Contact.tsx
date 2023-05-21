@@ -35,7 +35,7 @@ const Contact = () => {
           className="border-b-4 my-4
          border-[#F3EFE0]"
         >
-          <p className="text-lg sm:text-xl">Contact Me</p>
+          <p className="font-bold text-lg sm:text-xl">Contact Me</p>
         </div>
         <div className="flex flex-row justify-center py-4 items-center">
           {contact.map(({ icon, link, style }) => (
