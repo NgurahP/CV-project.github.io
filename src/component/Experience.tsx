@@ -1,65 +1,83 @@
 import React from "react";
-import html from "../assets/img/html.png";
-import css from "../assets/img/css.png";
+import html from "../assets/imgprojek/exp/html-pngwing.com.png";
+import css from "../assets/imgprojek/exp/pngwing.com.png";
 import java from "../assets/img/kisspng-java-platform-enterprise-edition-computer-icons-j-java-5adcc6d9352c53.8637052715244182652178.png";
-import php from "../assets/img/PHP-logo.svg.png";
+import php from "../assets/imgprojek/exp/php-pngwing.com.png";
 import react from "../assets/img/apps.png";
 import tailwind from "../assets/img/tailwindcss_logo_icon_167923.png";
+import sql from "../assets/imgprojek/exp/sql-pngwing.com.png";
+import c from "../assets/imgprojek/exp/cplusplus_plain_logo_icon_146580.png";
+
+interface exptype {
+  id: number;
+  src: string;
+  title: string;
+  style: string;
+}
 
 const Experience = () => {
-  const exp = [
+  const exp: Array<exptype> = [
     {
       id: 1,
       src: html,
       title: "HTML",
-      style: "shadow-[#E44D26]",
+      style: "hover:shadow-[#E44D26] transition",
     },
     {
       id: 2,
       src: css,
       title: "CSS",
-      style: "shadow-[#264DE4]",
+      style: "hover:shadow-[#264DE4]",
     },
     {
       id: 3,
       src: java,
       title: "Java",
-      style: "shadow-[#DB380E]",
+      style: "hover:shadow-[#DB380E]",
     },
     {
       id: 4,
       src: php,
       title: "PHP",
-      style: "shadow-[#787CB4]",
+      style: "hover:shadow-[#5C469C]",
     },
     {
       id: 5,
       src: react,
       title: "ReactJs",
-      style: "shadow-[#00DBFC]",
+      style: "hover:shadow-[#00DBFC]",
     },
     {
       id: 6,
       src: tailwind,
       title: "TailWindcss",
-      style: "shadow-[#47ABB3]",
+      style: "hover:shadow-[#47ABB3]",
+    },
+    {
+      id: 7,
+      src: sql,
+      title: "SQL",
+      style: "hover:shadow-[#000000]",
+    },
+    {
+      id: 8,
+      src: c,
+      title: "C++",
+      style: "hover:shadow-[#9C033A]",
     },
   ];
 
   return (
-    <div
-      id="experience"
-      className="bg-gradient-to-b from-gray-500 to-black w-full h-screen"
-    >
+    <div id="experience" className="bg-[#008ECC] w-full h-[120%] sm:h-screen">
       <div
-        className="max-w-screen-lg mx-auto p4
+        className="max-w-screen-lg mx-auto p-4
         flex flex-col justify-center w-full h-full text-white"
       >
         <div>
-          <p className="text-4xl font-bold border-b-4 border-gray-400 p-2 inline">
+          <p className="text-3xl sm:text-6xl font-bold border-b-4 border-[#434242] p-2 inline">
             Experience
           </p>
-          <p className="py-6">
+          <p className="py-6 text-lg sm:text-2xl">
             these are the programming language i've work with
           </p>
         </div>
@@ -69,10 +87,10 @@ const Experience = () => {
           {exp.map(({ id, src, title, style }) => (
             <div
               key={id}
-              className={`shadow-md hover:translate-y-1 duration-[0.5s] ${style}`}
+              className={`shadow-lg hover:scale-105 transition duration-[0.5s] ${style}`}
             >
               <img src={src} alt="" className="w-20 mx-auto" />
-              <div className="mt-4">{title}</div>
+              <div className="mt-4 text-lg">{title}</div>
             </div>
           ))}
         </div>

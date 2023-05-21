@@ -1,7 +1,7 @@
 import React from "react";
-import sd from "../assets/img/sd.jpg";
-import smp from "../assets/img/smp.jpg";
-import smk from "../assets/img/smk.jpg";
+import sd from "../assets/imgprojek/sekolah/sd.jpg";
+import smp from "../assets/imgprojek/sekolah/smp.jpg";
+import smk from "../assets/imgprojek/sekolah/smk.jpg";
 
 const Education = () => {
   const Edu = [
@@ -26,25 +26,22 @@ const Education = () => {
   ];
 
   return (
-    <div
-      id="education"
-      className="bg-gradient-to-b from-gray-500 to-black w-full h-screen"
-    >
+    <div id="education" className="bg-[#008ECC] w-full h-screen">
       <div
         className="max-w-screen-lg mx-auto p-4
         flex flex-col justify-center w-full h-full text-white"
       >
         <div>
-          <p className="text-2xl font-bold border-b-4 border-gray-400 p-2 inline">
+          <p className="text-3xl sm:text-5xl font-bold border-b-4 border-[#434242] p-2 inline">
             Education
           </p>
         </div>
         <div className="w-full grid flex-col sm:grid-cols-3 gap-8 text-center py-8 px-12 sm:px-0">
           {Edu.map(({ id, src, title, tahun }) => (
             <div key={id}>
-              <img src={src} alt="" className="w-80 max-sm:w-2/5 mx-auto" />
-              <div className="mt-4">{title}</div>
-              <div>{tahun}</div>
+              <img src={src} alt="" className="w-full max-sm:w-2/5 mx-auto" />
+              <div className="mt-4 text-xl sm:text-2xl">{title}</div>
+              <div className="text-lg sm:text-xl">{tahun}</div>
             </div>
           ))}
         </div>

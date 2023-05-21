@@ -11,6 +11,9 @@ module.exports = {
       fontFamily: {
         signature: "Dancing Script",
       },
+      backgroundImage: {
+        hero:"url(src/assets/img/Hero-bg.jpeg)", 
+      },
     },
   },
   plugins: [],
