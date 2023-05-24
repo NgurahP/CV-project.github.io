@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-scroll/modules";
 
-interface linkItem {
+interface LinkItem {
   id: number;
   link: string;
 }
@@ -12,7 +12,7 @@ const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
 
   // list Navbar
-  const links: Array<linkItem> = [
+  const links: Array<LinkItem> = [
       {
         id: 1,
         link: "home",
@@ -26,7 +26,7 @@ const Navbar = () => {
         link: "education",
       },
     ],
-    links2: Array<linkItem> = [
+    links2: Array<LinkItem> = [
       {
         id: 4,
         link: "portofolio",

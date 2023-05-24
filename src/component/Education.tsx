@@ -3,8 +3,15 @@ import sd from "../assets/imgprojek/sekolah/sd.jpg";
 import smp from "../assets/imgprojek/sekolah/smp.jpg";
 import smk from "../assets/imgprojek/sekolah/smk.jpg";
 
+interface Sekolah {
+  id: number;
+  src: string;
+  title: string;
+  tahun: string;
+}
+
 const Education = () => {
-  const Edu = [
+  const Edu: Array<Sekolah> = [
     {
       id: 1,
       src: sd,
@@ -39,9 +46,13 @@ const Education = () => {
         <div className="w-full grid flex-col sm:grid-cols-3 gap-8 text-center py-8 px-12 sm:px-0">
           {Edu.map(({ id, src, title, tahun }) => (
             <div key={id}>
-              <img src={src} alt="" className="w-full rounded-md max-sm:w-2/5 mx-auto" />
+              <img
+                src={src}
+                alt=""
+                className="w-full rounded-md max-sm:w-2/5 mx-auto"
+              />
               <div className="mt-2 text-lg sm:text-xl">{title}</div>
-              <div className="text-md sm:text-lg">{tahun}</div>
+              <div className="text-sm sm:text-lg">{tahun}</div>
             </div>
           ))}
         </div>
