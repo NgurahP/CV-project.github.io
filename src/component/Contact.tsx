@@ -1,4 +1,5 @@
 import React from "react";
+import { useForm, DeepMap, FieldError } from "react-hook-form";
 import { BsWhatsapp } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
 import { BsInstagram } from "react-icons/bs";
@@ -10,6 +11,18 @@ interface Cont {
 }
 
 const Contact = () => {
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm<{
+    userName: string;
+    email: string;
+    text: string;
+  }>();
+
+  console.log("errors", errors);
+
   const contact: Array<Cont> = [
     {
       icon: <MdEmail />,
@@ -42,40 +55,78 @@ const Contact = () => {
 
         <div className="flex flex-col md:flex-row justify-center items-center">
           <form
+            onSubmit={handleSubmit((data) => console.log(data))}
+            autoComplete="off"
             action="https://getform.io/f/a876231f-2e8d-4159-9c0e-8522ac72ee59"
             method="POST"
-            className="flex flex-col w-full md:w-1/2 md:mr-4"
-          >
+            className="flex flex-col w-full md:w-1/2 md:mr-4">
             <input
+              {...register("userName", {
+                required: { value: true, message: "Please Enter Your name" },
+                minLength: {
+                  value: 3,
+                  message:
+                    "Incorrect Input. Enter your name at least 3 characters long",
+                },
+                maxLength: {
+                  value: 40,
+                  message:
+                    "Incorrect input, the name entered cannot be longer than 40 characters",
+                },
+              })}
               type="text"
-              name="name"
+              name="userName"
               placeholder="Enter your name"
               className="p-2 bg-transparent border-2 rounded-md text-[#F3EFE0] focus:outline-none"
             />
+            {errors.userName && (
+              <p className="mt-1 text-sm text-red-500">
+                {errors.userName.message}
+              </p>
+            )}
 
             <input
+              {...register("email", {
+                required: "Please Enter Your Email",
+                pattern: {
+                  value:
+                    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                  message: "Invalid email address",
+                },
+              })}
               type="email"
               name="email"
               placeholder="Enter your email"
-              className="my-4 p-2 bg-transparent border-2 rounded-md text-[#F3EFE0] focus:outline-none"
+              className="mt-2 p-2 bg-transparent border-2 rounded-md text-[#F3EFE0] focus:outline-none"
             />
+            {errors.email && (
+              <p className="mt-1 text-sm text-red-500">
+                {String(errors.email.message) || ""}
+              </p>
+            )}
 
             <textarea
+              {...register("text", { required: "Please send me a message" })}
               placeholder="Enter your message"
-              name="message"
-              className="p-2 bg-transparent border-2 rounded-md text-[#F3EFE0] focus:outline-none h-32 md:h-52"
-            ></textarea>
+              name="text"
+              className="mt-2 p-2 bg-transparent border-2 rounded-md text-[#F3EFE0] focus:outline-none h-32 md:h-52"></textarea>
+            {errors.text && (
+              <p className="mt-1 text-sm text-red-500">
+                {String(errors.text.message) || ""}
+              </p>
+            )}
 
-            <button className="text-[#434242] w-fit px-6 py-3 my-8 mx-auto flex items-center bg-[#F3EFE0] rounded-md cursor-pointer hover:text-[#008ECC] hover:bg-[#fff3f1] hover:scale-105 duration-300 hover:ease-in-out drop-shadow-lg">{`Submit`}</button>
+            <button
+              type="submit"
+              className="text-[#434242] w-fit px-6 py-3 my-8 mx-auto flex items-center bg-[#F3EFE0] rounded-md cursor-pointer hover:text-[#008ECC] hover:bg-[#fff3f1] hover:scale-105 duration-300 hover:ease-in-out drop-shadow-lg">{`Submit`}</button>
           </form>
-          <div className="flex flex-row mx-auto my-auto justify-center items-center md:flex-col md:ml-4">
+          <div className="flex flex-row mx-auto pb-32 justify-center items-center md:flex-col md:ml-4">
             {contact.map(({ icon, link, style }) => (
               <a
                 href={link}
                 className={`md:my-4 mx-4 p-2 text-xl hover:scale-105 text-white transition border rounded-full ${style}`}
                 target="_blank"
-                rel="noopener noreferrer"
-              >
+                rel="noopener noreferrer">
                 {icon}
               </a>
             ))}
