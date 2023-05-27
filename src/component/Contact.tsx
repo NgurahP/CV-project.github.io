@@ -61,6 +61,7 @@ const Contact = () => {
             method="POST"
             className="flex flex-col w-full md:w-1/2 md:mr-4">
             <input
+              data-cy="input-userName"
               {...register("userName", {
                 required: { value: true, message: "Please Enter Your name" },
                 minLength: {
@@ -80,8 +81,8 @@ const Contact = () => {
               className="p-2 bg-transparent border-2 rounded-md text-[#F3EFE0] focus:outline-none"
             />
             {errors.userName && (
-              <p className="mt-1 text-sm text-red-500">
-                {errors.userName.message}
+              <p data-cy="error-userName" className="mt-1 text-sm text-red-500">
+                {errors.userName.message || ""}
               </p>
             )}
 
@@ -94,29 +95,32 @@ const Contact = () => {
                   message: "Invalid email address",
                 },
               })}
+              data-cy="input-email"
               type="email"
               name="email"
               placeholder="Enter your email"
               className="mt-2 p-2 bg-transparent border-2 rounded-md text-[#F3EFE0] focus:outline-none"
             />
             {errors.email && (
-              <p className="mt-1 text-sm text-red-500">
-                {String(errors.email.message) || ""}
+              <p data-cy="error-email" className="mt-1 text-sm text-red-500">
+                {errors.email.message || ""}
               </p>
             )}
 
             <textarea
               {...register("text", { required: "Please send me a message" })}
+              data-cy="input-text"
               placeholder="Enter your message"
               name="text"
               className="mt-2 p-2 bg-transparent border-2 rounded-md text-[#F3EFE0] focus:outline-none h-32 md:h-52"></textarea>
             {errors.text && (
-              <p className="mt-1 text-sm text-red-500">
-                {String(errors.text.message) || ""}
+              <p data-cy="error-text" className="mt-1 text-sm text-red-500">
+                {errors.text.message || ""}
               </p>
             )}
 
             <button
+              data-cy="submit"
               type="submit"
               className="text-[#434242] w-fit px-6 py-3 my-8 mx-auto flex items-center bg-[#F3EFE0] rounded-md cursor-pointer hover:text-[#008ECC] hover:bg-[#fff3f1] hover:scale-105 duration-300 hover:ease-in-out drop-shadow-lg">{`Submit`}</button>
           </form>
