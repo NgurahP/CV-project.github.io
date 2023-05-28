@@ -35,9 +35,9 @@ const Contact = () => {
     })
       .then((response) => {
         if (response.ok) {
-          console.log("Form submitted successfully!");
+          alert("Form submitted successfully!");
         } else {
-          console.log("Form submission failed!");
+          alert("Form submission failed!");
         }
       })
       .catch((error) => {
