@@ -138,7 +138,7 @@ const Contact = () => {
             {errors.message && (
               <p
                 data-cy="error-message"
-                className="mt-1 message-sm message-red-500">
+                className="mt-1 text-sm text-red-500">
                 {errors.message.message || ""}
               </p>
             )}
