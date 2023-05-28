@@ -16,12 +16,34 @@ const Contact = () => {
     formState: { errors },
     handleSubmit,
   } = useForm<{
-    userName: string;
+    name: string;
     email: string;
-    text: string;
+    message: string;
   }>();
 
-  console.log("errors", errors);
+  const handleFormSubmit = (data: {
+    name: string;
+    email: string;
+    message: string;
+  }) => {
+    fetch("https://formsubmit.co/ngurahputra2425@gmail.com", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => {
+        if (response.ok) {
+          alert("Form submitted successfully!");
+        } else {
+          alert("Form submission failed!");
+        }
+      })
+      .catch((error) => {
+        console.log("Error submitting form:", error);
+      });
+  };
 
   const contact: Array<Cont> = [
     {
@@ -55,14 +77,14 @@ const Contact = () => {
 
         <div className="flex flex-col md:flex-row justify-center items-center">
           <form
-            onSubmit={handleSubmit((data) => console.log(data))}
             autoComplete="off"
-            action="https://getform.io/f/a876231f-2e8d-4159-9c0e-8522ac72ee59"
+            action="https://formsubmit.co/ngurahputra2425@gmail.com"
             method="POST"
+            onSubmit={handleSubmit(handleFormSubmit)}
             className="flex flex-col w-full md:w-1/2 md:mr-4">
             <input
-              data-cy="input-userName"
-              {...register("userName", {
+              data-cy="input-name"
+              {...register("name", {
                 required: { value: true, message: "Please Enter Your name" },
                 minLength: {
                   value: 3,
@@ -76,13 +98,13 @@ const Contact = () => {
                 },
               })}
               type="text"
-              name="userName"
+              name="name"
               placeholder="Enter your name"
               className="p-2 bg-transparent border-2 rounded-md text-[#F3EFE0] focus:outline-none"
             />
-            {errors.userName && (
-              <p data-cy="error-userName" className="mt-1 text-sm text-red-500">
-                {errors.userName.message || ""}
+            {errors.name && (
+              <p data-cy="error-name" className="mt-1 text-sm text-red-500">
+                {errors.name.message || ""}
               </p>
             )}
 
@@ -108,14 +130,16 @@ const Contact = () => {
             )}
 
             <textarea
-              {...register("text", { required: "Please send me a message" })}
-              data-cy="input-text"
+              {...register("message", { required: "Please send me a message" })}
+              data-cy="input-message"
               placeholder="Enter your message"
-              name="text"
+              name="message"
               className="mt-2 p-2 bg-transparent border-2 rounded-md text-[#F3EFE0] focus:outline-none h-32 md:h-52"></textarea>
-            {errors.text && (
-              <p data-cy="error-text" className="mt-1 text-sm text-red-500">
-                {errors.text.message || ""}
+            {errors.message && (
+              <p
+                data-cy="error-message"
+                className="mt-1 message-sm message-red-500">
+                {errors.message.message || ""}
               </p>
             )}
 

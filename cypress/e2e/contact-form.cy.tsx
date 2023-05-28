@@ -1,4 +1,4 @@
-describe("template spec", () => {
+describe("contact test", () => {
   it("error when all input box blank", () => {
     cy.visit("http://localhost:3000");
     cy.get('[data-cy="submit"]').click();
@@ -13,6 +13,6 @@ describe("template spec", () => {
     cy.get('[data-cy="input-text"]').type("Hello");
     cy.get('[data-cy="submit"]').click();
     // cy.url().should("match", /\/success$/);
-    cy.visit("https://getform.io/f/a876231f-2e8d-4159-9c0e-8522ac72ee59");
+    // cy.visit("https://getform.io/f/a876231f-2e8d-4159-9c0e-8522ac72ee59");
   });
 });
