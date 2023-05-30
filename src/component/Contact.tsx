@@ -1,10 +1,11 @@
 import React from "react";
-import { useForm, DeepMap, FieldError } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { BsWhatsapp } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
 import { BsInstagram } from "react-icons/bs";
 
 interface Cont {
+  id: number;
   icon: any;
   link: string;
   style: string;
@@ -47,16 +48,19 @@ const Contact = () => {
 
   const contact: Array<Cont> = [
     {
+      id: 1,
       icon: <MdEmail />,
       link: "mailto:ngurahputra2425@gmail.com",
       style: "hover:bg-[#F04235]",
     },
     {
+      id: 2,
       icon: <BsWhatsapp />,
       link: "https://wa.me/+6289653218537",
       style: "hover:bg-[#00A000]",
     },
     {
+      id: 3,
       icon: <BsInstagram />,
       link: "https://www.instagram.com/ngurahputra2403/",
       style:
@@ -78,8 +82,6 @@ const Contact = () => {
         <div className="flex flex-col md:flex-row justify-center items-center">
           <form
             autoComplete="off"
-            action="https://formsubmit.co/ngurahputra2425@gmail.com"
-            method="POST"
             onSubmit={handleSubmit(handleFormSubmit)}
             className="flex flex-col w-full md:w-1/2 md:mr-4">
             <input
@@ -136,9 +138,7 @@ const Contact = () => {
               name="message"
               className="mt-2 p-2 bg-transparent border-2 rounded-md text-[#F3EFE0] focus:outline-none h-32 md:h-52"></textarea>
             {errors.message && (
-              <p
-                data-cy="error-message"
-                className="mt-1 text-sm text-red-500">
+              <p data-cy="error-message" className="mt-1 text-sm text-red-500">
                 {errors.message.message || ""}
               </p>
             )}

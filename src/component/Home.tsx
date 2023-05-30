@@ -13,7 +13,7 @@ function Home() {
           <h2 className="text-xl w-28 md:text-5xl md:w-64 sm:text-4xl sm:w-48 font-bold border-b-2 border-[#FFE6E6] text-[#22A39F]">
             About Me
           </h2>
-          <p className="text-[#FFE6E6] text-md md:text-lg sm:text-lg py-4 max-w-md">
+          <p  className="text-[#FFE6E6] text-md md:text-lg sm:text-lg py-4 max-w-md" data-cy="home-p">
             I am a junior programmer and student at the Wira Harapan Vocational
             High School, I am currently a street vendor at Taksu Tech, for more
             details, click the button below.

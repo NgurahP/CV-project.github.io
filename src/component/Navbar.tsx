@@ -101,6 +101,7 @@ const Navbar = () => {
       <div
         onClick={() => setNav(!nav)}
         className="cursor-pointer pr-4 z-10 duration-300 text-white md:min-[1022px]:hidden"
+        data-cy="menu-icon"
       >
         {nav ? <FaTimes size={30} /> : <FaBars size={30} />}
       </div>
@@ -113,6 +114,7 @@ const Navbar = () => {
               <li
                 key={id}
                 className="px-4 cursor-pointer capitalize py-6 text-2xl sm:text-4xl hover:scale-90 hover:bg-[#F3EFE0] hover:text-[#222222] rounded-3xl duration-[0.5s] transition"
+                data-cy="left-menu"
               >
                 {link}
               </li>
@@ -123,6 +125,7 @@ const Navbar = () => {
               <li
                 key={id}
                 className="px-4 cursor-pointer capitalize py-6 text-2xl sm:text-4xl  hover:scale-90 hover:bg-[#F3EFE0] hover:text-[#222222] rounded-3xl duration-[0.5s] transition"
+                data-cy="right-menu"
               >
                 {link}
               </li>
