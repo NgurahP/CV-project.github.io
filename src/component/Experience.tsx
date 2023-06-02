@@ -74,10 +74,10 @@ const Experience = () => {
         flex flex-col justify-center w-full h-full text-white"
       >
         <div>
-          <p className="text-2xl sm:text-5xl font-bold border-b-4 border-[#434242] p-2 inline">
+          <p className="text-2xl sm:text-5xl font-bold border-b-4 border-[#434242] p-2 inline" data-cy="exp-header">
             Experience
           </p>
-          <p className="py-6 text-md sm:text-xl">
+          <p className="py-6 text-md sm:text-xl" data-cy="exp-p">
             these are the programming language i've work with
           </p>
         </div>
@@ -89,8 +89,8 @@ const Experience = () => {
               key={id}
               className={`shadow-lg hover:scale-105 transition duration-[0.5s] ${style}`}
             >
-              <img src={src} alt="" className="w-16 md:w-20 mx-auto" />
-              <div className="mt-4 text-lg">{title}</div>
+              <img src={src} alt="" className="w-16 md:w-20 mx-auto" data-cy="exp-img"/>
+              <div className="mt-4 text-lg" data-cy="exp-title">{title}</div>
             </div>
           ))}
         </div>

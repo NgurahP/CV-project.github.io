@@ -43,44 +43,47 @@ const About = () => {
             src={Profile}
             alt="profile"
             className="rounded-full pb-2 mx-auto w-[30%]"
+            data-cy="img-about"
           />
         </div>
 
         <div className="pb-4 mt-2 flex justify-center items-center w-full">
-          <p className="text-2xl sm:text-4xl font-bold text-[#22A39F] inline">
+          <p
+            className="text-2xl sm:text-4xl font-bold text-[#22A39F] inline"
+            data-cy="personal-info">
             Personal Information
           </p>
         </div>
         <div>
           <div className="justify-center grid grid-cols-2 divide-[#222222] divide-x-2 w-full md:max-[760px]:m-0 p-0">
-            <div className="text-center text-md border-[#222222] p-2 border-b-2">
+            <div className="text-center text-md border-[#222222] p-2 border-b-2" data-cy="name-h">
               Name
             </div>
-            <div className="text-center text-md border-[#222222] p-2 border-b-2">
+            <div className="text-center text-md border-[#222222] p-2 border-b-2" data-cy="name-p">
               Ngurah Putra Amerta Widhi Gunaya
             </div>
           </div>
           <div className="justify-center grid grid-cols-2 divide-[#222222] divide-x-2 border-t-0 w-full md:max-[760px]:m-0 p-0">
-            <div className="text-center text-md p-2">Gender</div>
-            <div className="text-center text-md p-2">Male</div>
+            <div className="text-center text-md p-2" data-cy="gender-h">Gender</div>
+            <div className="text-center text-md p-2"data-cy="gender-p">Male</div>
           </div>
           <div className="justify-center grid grid-cols-2 divide-[#222222] divide-x-2 divide-y-2 border-t-0 w-full md:max-[760px]:m-0 p-0">
-            <div className="text-center text-md p-2">Birthdate</div>
-            <div className="text-center text-md p-2">March 24, 2006</div>
+            <div className="text-center text-md p-2"data-cy="birth-h">Birthdate</div>
+            <div className="text-center text-md p-2"data-cy="birth-p">March 24, 2006</div>
           </div>
           <div className="justify-center grid grid-cols-2 divide-[#222222] divide-x-2 divide-y-2 border-t-0 w-full md:max-[760px]:m-0 p-0">
-            <div className="text-center text-md p-2">Age</div>
-            <div className="text-center text-md p-2">17</div>
+            <div className="text-center text-md p-2"data-cy="age-h">Age</div>
+            <div className="text-center text-md p-2"data-cy="age-p">17</div>
           </div>
           <div className="justify-center grid grid-cols-2 divide-[#222222] divide-x-2 divide-y-2 border-t-0 w-full md:max-[760px]:m-0 p-0">
-            <div className="text-center text-md p-2">Address</div>
-            <div className="text-center text-md p-2">
+            <div className="text-center text-md p-2"data-cy="address-h">Address</div>
+            <div className="text-center text-md p-2"data-cy="address-p">
               Jl.Raya Padang Luwih No.20, Dalung, Kuta Utara, Badung, Bali
             </div>
           </div>
           <div className="justify-center grid grid-cols-2 divide-[#222222] divide-x-2 divide-y-2 border-t-0 w-full md:max-[760px]:m-0 p-0">
-            <div className="text-center text-md p-2">Nationality</div>
-            <div className="text-center text-md p-2">Indonesian</div>
+            <div className="text-center text-md p-2"data-cy="national-h">Nationality</div>
+            <div className="text-center text-md p-2"data-cy="national-p">Indonesian</div>
           </div>
         </div>
       </div>

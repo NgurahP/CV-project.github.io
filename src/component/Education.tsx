@@ -36,10 +36,11 @@ const Education = () => {
     <div id="education" className="bg-[#008ECC] w-full h-screen">
       <div
         className="max-w-screen-lg mx-auto p-4
-        flex flex-col justify-center w-full h-full text-white"
-      >
+        flex flex-col justify-center w-full h-full text-white">
         <div>
-          <p className="text-2xl sm:text-4xl font-bold border-b-4 border-[#434242] p-2 inline">
+          <p
+            className="text-2xl sm:text-4xl font-bold border-b-4 border-[#434242] p-2 inline"
+            data-cy="Education">
             Education
           </p>
         </div>
@@ -50,9 +51,14 @@ const Education = () => {
                 src={src}
                 alt=""
                 className="w-full rounded-md max-sm:w-2/5 mx-auto"
+                data-cy="img-edu"
               />
-              <div className="mt-2 text-lg sm:text-xl">{title}</div>
-              <div className="text-sm sm:text-lg">{tahun}</div>
+              <div className="mt-2 text-lg sm:text-xl" data-cy="title-edu">
+                {title}
+              </div>
+              <div className="text-sm sm:text-lg" data-cy="tahun-edu">
+                {tahun}
+              </div>
             </div>
           ))}
         </div>
