@@ -49,19 +49,19 @@ const Contact = () => {
   const contact: Array<Cont> = [
     {
       id: 1,
-      icon: <MdEmail />,
+      icon: <MdEmail data-cy="icon-email" />,
       link: "mailto:ngurahputra2425@gmail.com",
       style: "hover:bg-[#F04235]",
     },
     {
       id: 2,
-      icon: <BsWhatsapp />,
+      icon: <BsWhatsapp data-cy="icon-whatsapp" />,
       link: "https://wa.me/+6289653218537",
       style: "hover:bg-[#00A000]",
     },
     {
       id: 3,
-      icon: <BsInstagram />,
+      icon: <BsInstagram data-cy="icon-instagram"  />,
       link: "https://www.instagram.com/ngurahputra2403/",
       style:
         "bg-gradient-to-tr hover:from-[#EFC000] hover:from-10% hover:via-[#EE0712] hover:via-20% hover:to-[#7838B0] hover:to-70%",

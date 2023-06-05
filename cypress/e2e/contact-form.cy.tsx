@@ -62,7 +62,7 @@ describe("contact test", () => {
     cy.get('[data-cy="portfolio-code"]').should("exist");
     cy.get('[data-cy="portfolio-demo"]').should("exist").click();
   });
-  it.only("testing on experience page", () => {
+  it("testing on experience page", () => {
     cy.get('[data-cy="menu-icon"]').click();
     cy.get(':nth-child(5) > [data-cy="right-menu"]').click();
     cy.get('[data-cy="menu-icon"]').click();
@@ -103,5 +103,13 @@ describe("contact test", () => {
     cy.on("window:alert", (message) => {
       expect(message).to.equal("Form submitted successfully!");
     });
+  });
+  it("testing contact icon button", () => {
+    cy.get('[data-cy="icon-email"]').click();
+    cy.visit("http://localhost:3000");
+    cy.get('[data-cy="icon-whatsapp"]').click();
+    cy.visit("http://localhost:3000");
+    cy.get('[data-cy="icon-instagram"]').click();
+    cy.visit("http://localhost:3000");
   });
 });
