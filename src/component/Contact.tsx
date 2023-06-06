@@ -27,7 +27,7 @@ const Contact = () => {
     email: string;
     message: string;
   }) => {
-    fetch("https://formsubmit.co/ngurahputra2425@gmail.com", {
+    fetch("https://formspree.io/f/xvonndka", {
       method: "POST",
       body: JSON.stringify(data),
       headers: {

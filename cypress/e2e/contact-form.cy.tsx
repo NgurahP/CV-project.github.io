@@ -238,9 +238,7 @@ describe("CV Project test on desktop", () => {
     cy.wait(1000);
     cy.get('[data-cy="input-message"]').type("Hello");
     cy.wait(1000);
-    cy.intercept("POST", "https://formsubmit.co/ngurahputra2425@gmail.com").as(
-      "contactForm"
-    );
+    cy.intercept("POST", "https://formspree.io/f/xvonndka").as("contactForm");
     cy.get('[data-cy="submit"]').click();
     cy.wait("@contactForm");
     cy.on("window:alert", (message) => {
