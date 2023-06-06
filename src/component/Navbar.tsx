@@ -68,9 +68,9 @@ const Navbar = () => {
         {links.map(({ id, link }) => (
           <li
             key={id}
-            className="px-2 mx-1 text-md cursor-pointer capitalize font-light hover:scale-105 text-[#F3EFE0] hover:bg-[#F3EFE0] hover:text-[#222222] transition rounded-lg duration-[0.5s]"
+            className="px-2 mx-1 text-md cursor-pointer capitalize font-light hover:scale-105 text-[#F3EFE0] hover:bg-[#F3EFE0] hover:text-[#222222] transition rounded-lg duration-[0.5s]" 
           >
-            <Link to={link} smooth duration={500}>
+            <Link to={link} smooth duration={500} data-cy="left-menu-pc-screen">
               {link}
             </Link>
           </li>
@@ -87,9 +87,9 @@ const Navbar = () => {
         {links2.map(({ id, link }) => (
           <li
             key={id}
-            className="px-2 mx-1 text-md cursor-pointer capitalize font-light hover:scale-105 text-[#F3EFE0] hover:bg-[#F3EFE0] hover:text-[#222222] transition rounded-lg duration-[0.5s]"
+            className="px-2 mx-1 text-md cursor-pointer capitalize font-light hover:scale-105 text-[#F3EFE0] hover:bg-[#F3EFE0] hover:text-[#222222] transition rounded-lg duration-[0.5s]" 
           >
-            <Link to={link} smooth duration={500}>
+            <Link to={link} smooth duration={500} data-cy="right-menu-pc-screen">
               {link}
             </Link>
           </li>
